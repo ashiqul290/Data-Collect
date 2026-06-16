@@ -37,7 +37,7 @@ const blogSchema = new mongoose.Schema({
         type: String,
         enum: ["Pending", "Cancelled", "Completed"],
         default: "Pending"
-    },
+    }, 
 });
 
 const InfoDetails = mongoose.model('InfoDetails', blogSchema);
