@@ -1,19 +1,13 @@
 const express = require("express");
 const DBConfig = require("./Config/db.config");
+const router = require("./api/data");
 const app = express();
 const port = 5100;
 
 DBConfig();
 app.use(express.json());
 
-
-app.get("/", (req, res) => {
-  res.json({
-    name: "Ashiqul Islam",
-    email: "ashiq@gmail.com",
-  });
-});
-
+app.use("/api", router);
 
 
 app.listen(port, () => {
